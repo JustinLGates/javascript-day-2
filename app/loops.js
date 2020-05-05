@@ -5,7 +5,14 @@
 // output: 24
 // 1*2*3*4 = 24
 
-function factorials(num) {}
+function factorials(num) {
+  //i chose to us a recursive function i know im a pain in the butt
+  if (num == 1) {
+    return 1;
+  } else {
+    return num * factorials(num - 1);
+  }
+}
 
 // ------------------------------------------
 
@@ -14,7 +21,13 @@ function factorials(num) {}
 // input: 2, 6
 // output: 20
 
-function rangeTotal(n1, n2) {}
+function rangeTotal(n1, n2) {
+  let total = 0;
+  for (let i = n1; i <= n2; i++) {
+    total += i;
+  }
+  return total;
+}
 
 // ------------------------------------------
 
@@ -24,4 +37,13 @@ function rangeTotal(n1, n2) {}
 // input: 15, 20, 5
 // output: 2
 
-function rangeDivisor(start, end, divisor) {}
+function rangeDivisor(start, end, divisor) {
+  let result = 0;
+
+  for (let i = start; i <= end - start + start; i++) {
+    if (!(i % divisor)) {
+      result++;
+    }
+  }
+  return result;
+}
